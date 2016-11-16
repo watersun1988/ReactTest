@@ -3,9 +3,9 @@
  */
 var React = require('react');
 var ReactDOM = require('react-dom');
-var ListController = require('./components/ListController');
+var MainPage = require('./components/MainPage');
 
 ReactDOM.render(
-    <ListController/>,
+    <MainPage/>,
     document.getElementById('container')
 );

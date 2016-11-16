@@ -4,16 +4,17 @@
 var React = require('react');
 
 var ListNode = React.createClass({
-    _onClick:function () {
+    _onClick:function (e) {
+        e.preventDefault();
         return this.props.onClick(this.props.data.id);
     },
     render:function () {
         return(
-            <div className="ListNode" onClick={this._onClick()}>
+            <a onClick={this._onClick}>
                 <span>{this.props.data.product}</span>
                 <span>{this.props.data.price}</span>
                 <span>{this.props.data.increase}</span>
-            </div>
+            </a>
         )
     }
 });

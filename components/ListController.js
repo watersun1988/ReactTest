@@ -36,7 +36,6 @@ var ListController = React.createClass({
         console.log("id:"+id);
     },
     render:function () {
-        console.log("listcontroller render");
         return(
         <List data={this.state.data} onClick={this.toProductPage}/>
         )

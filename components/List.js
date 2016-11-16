@@ -5,9 +5,9 @@ var React = require('react');
 var ListNode = require('./ListNode')
 var List = React.createClass({
     render:function () {
-        var listnodes = this.props.data.map(function (node) {
+        var listnodes = this.props.data.map(function (node, i) {
             return(
-                <li>
+                <li key={node.id}>
                     <ListNode data={node} onClick={this.props.onClick}></ListNode>
                 </li>
             );
