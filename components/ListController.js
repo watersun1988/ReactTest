@@ -3,32 +3,27 @@
  */
 var React = require('react');
 var List = require('./List');
-
-var tmpData = [
-    { id:'1',
-     product:'glod',
-    price:'123',
-    increase:'1%'
-    },
-    {
-        id:'2',
-        product:'ch glod',
-        price:'200',
-        increase:'2%'
-    }
-];
+var ListStore = require('../stores/ListStore');
 
 var ListController = React.createClass({
     getInitialState:function () {
         return {
-            data: []
+            data: ListStore.getAll()
         }
     },
 
     componentDidMount:function () {
+        ListStore.addChangeListener(this._onChange)
+    },
+
+    componentWillUnmount: function() {
+        ListStore.removeChangeListener(this._onChange);
+    },
+
+    _onChange:function () {
         this.setState(
             {
-                data:tmpData
+                data:ListStore.getAll()
             });
     },
 

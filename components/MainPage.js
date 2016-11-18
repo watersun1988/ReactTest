@@ -4,6 +4,7 @@
 var React = require('react');
 var HeaderDiv = require('./HeaderDiv');
 var ListController = require('./ListController');
+var TailDiv = require('./TailDiv');
 
 var MainPage = React.createClass({
     render:function () {
@@ -11,6 +12,7 @@ var MainPage = React.createClass({
             <div>
                 <HeaderDiv/>
                 <ListController/>
+                <TailDiv/>
             </div>
         )
     }
