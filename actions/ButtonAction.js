@@ -9,6 +9,25 @@ var ButtonAction = {
             actionType:'REFRESH_LIST'
         });
     },
+    searchProduct:function (value) {
+        AppDispatcher.dispatch({
+            actionType:'SEARCH',
+            text:value
+        });
+    },
+    showProduct:function (id) {
+        console.log('show product:'+id);
+        AppDispatcher.dispatch({
+            actionType:'TO_PRODUCT',
+            text:id
+        });
+    },
+    gotoMainPage:function () {
+        AppDispatcher.dispatch({
+            actionType:'TO_PRODUCT',
+            text:'0'
+        });
+    }
 };
 
 module.exports=ButtonAction;

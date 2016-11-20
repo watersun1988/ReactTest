@@ -6,7 +6,10 @@ var React = require('react');
 var ListNode = React.createClass({
     _onClick:function (e) {
         e.preventDefault();
-        return this.props.onClick(this.props.data.id);
+        if(this.props.onClick)
+            return this.props.onClick(this.props.data.id);
+        else
+            return;
     },
     render:function () {
         return(

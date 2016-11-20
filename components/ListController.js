@@ -4,6 +4,7 @@
 var React = require('react');
 var List = require('./List');
 var ListStore = require('../stores/ListStore');
+var ButtonAction = require('../actions/ButtonAction');
 
 var ListController = React.createClass({
     getInitialState:function () {
@@ -29,6 +30,7 @@ var ListController = React.createClass({
 
     toProductPage:function (id) {
         console.log("id:"+id);
+        ButtonAction.showProduct(id);
     },
     render:function () {
         return(

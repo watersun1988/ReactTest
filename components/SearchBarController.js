@@ -3,10 +3,12 @@
  */
 var React = require('react');
 var SearchBar = require('./SearchBar');
+var ButtonAction = require('../actions/ButtonAction');
 
 var SearchBarContoller = React.createClass({
     toSearchPage:function (data) {
         console.log("search value:"+data);
+        ButtonAction.searchProduct(data);
     },
     render:function () {
         return(

@@ -3,11 +3,13 @@
  */
 var React = require('react');
 var RefreshBnCtl = require('./RefreshBnCtl');
+var MainBnCtl = require('./MainBnCtl');
 
 var TailDiv = React.createClass({
     render:function () {
         return(
             <div>
+                <MainBnCtl/>
                 <RefreshBnCtl/>
             </div>
         )
