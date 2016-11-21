@@ -14,9 +14,9 @@ var ListNode = React.createClass({
     render:function () {
         return(
             <a onClick={this._onClick}>
-                <span>{this.props.data.product}</span>
-                <span>{this.props.data.price}</span>
-                <span>{this.props.data.increase}</span>
+                <span className="label label-default">{this.props.data.product}</span>
+                <span className="label label-primary">{this.props.data.price}</span>
+                <span className="label label-danger">{this.props.data.increase}</span>
             </a>
         )
     }

@@ -7,14 +7,14 @@ var List = React.createClass({
     render:function () {
         var listnodes = this.props.data.map(function (node, i) {
             return(
-                <li key={node.id}>
+                <li key={node.id} className="list-group-item">
                     <ListNode data={node} onClick={this.props.onClick}></ListNode>
                 </li>
             );
         }.bind(this));
         return(
             <div>
-                <ul>
+                <ul className="list-group">
                     {listnodes}
                 </ul>
             </div>
