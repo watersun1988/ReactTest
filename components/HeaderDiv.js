@@ -7,8 +7,8 @@ var SearchBarController = require('./SearchBarController');
 var HeaderDiv = React.createClass({
     render:function () {
         return(
-            <div>
-                <span>hello</span>
+            <div className="panel panel-heading">
+                <h4 style={{float:'left'}}>hello</h4>
                 <SearchBarController/>
             </div>
         );

@@ -10,9 +10,9 @@ var SearchBar = React.createClass({
     },
     render:function () {
         return(
-            <div>
+            <div style={{float:'right'}}>
                 <input type="text" ref="searchInput"/>
-                <a onClick={this._onClick}>submit</a>
+                <a onClick={this._onClick} className="btn btn-default">Search</a>
             </div>
         )
     }

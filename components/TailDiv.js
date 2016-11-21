@@ -8,7 +8,7 @@ var MainBnCtl = require('./MainBnCtl');
 var TailDiv = React.createClass({
     render:function () {
         return(
-            <div>
+            <div className="navbar navbar-fixed-bottom" style={{backgroundColor:'#D6123E'}}>
                 <MainBnCtl/>
                 <RefreshBnCtl/>
             </div>

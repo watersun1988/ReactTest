@@ -13,11 +13,11 @@ var ListNode = React.createClass({
     },
     render:function () {
         return(
-            <a onClick={this._onClick}>
+            <div onClick={this._onClick}>
                 <span className="label label-default">{this.props.data.product}</span>
-                <span className="label label-primary">{this.props.data.price}</span>
-                <span className="label label-danger">{this.props.data.increase}</span>
-            </a>
+                <span className="label label-danger" style={{float:'right'}}>{this.props.data.increase}</span>
+                <span className="label label-primary" style={{float:'right',verticalAlign:'middle',marginRight:'5px'}}>{this.props.data.price}</span>
+            </div>
         )
     }
 });

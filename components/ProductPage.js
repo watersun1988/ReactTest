@@ -7,7 +7,7 @@ var ListNode = require('./ListNode')
 var ProductPage = React.createClass({
     render:function () {
         return(
-            <div>
+            <div className="panel-body">
                 <ListNode data={this.props.data}></ListNode>
                 <span>img</span>
             </div>

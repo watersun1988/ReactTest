@@ -13,7 +13,7 @@ var List = React.createClass({
             );
         }.bind(this));
         return(
-            <div>
+            <div className="panel-body">
                 <ul className="list-group">
                     {listnodes}
                 </ul>

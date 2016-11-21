@@ -41,7 +41,7 @@ var MainPage = React.createClass({
             Page = (<ProductPageCtl id={this.state.id}/>);
         }
         return(
-            <div>
+            <div className="panel panel-default">
                 <HeaderDiv/>
                 {Page}
                 <TailDiv/>

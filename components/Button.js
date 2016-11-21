@@ -6,9 +6,7 @@ var React = require('react');
 var Button = React.createClass({
     render:function () {
         return(
-            <a onClick={this.props.onClick}>
-                <span>{this.props.value}</span>
-            </a>
+            <a onClick={this.props.onClick} className="btn btn-default" style={{margin:'5px'}}>{this.props.value}</a>
         );
     }
 });
