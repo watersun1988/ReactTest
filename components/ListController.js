@@ -14,7 +14,7 @@ var ListController = React.createClass({
     },
 
     componentDidMount:function () {
-        ListStore.addChangeListener(this._onChange)
+        ListStore.addChangeListener(this._onChange);
     },
 
     componentWillUnmount: function() {

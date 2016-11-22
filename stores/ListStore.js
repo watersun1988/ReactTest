@@ -9,6 +9,9 @@ var ListStore = assign({}, EventEmitter.prototype, {
     ],
 
     getAll: function () {
+        if(this.items.length == 0){
+            this.getMyProduct();
+        }
         return this.items;
     },
 
@@ -30,7 +33,10 @@ var ListStore = assign({}, EventEmitter.prototype, {
     },
 
     searchProduct:function (value) {
-        this.items[0].price+=value;
+        $.get('../search/'+value,function (data) {
+            this.items = data.result.data;
+            this.emitChange();
+        }.bind(this))
     },
 
     emitChange: function () {

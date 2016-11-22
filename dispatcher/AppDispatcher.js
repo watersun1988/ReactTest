@@ -13,8 +13,10 @@ AppDispatcher.register(function (action) {
             //ListStore.emitChange();
             break;
         case 'SEARCH':
+            IdStore.setId('0');
+            IdStore.emitChange();
             ListStore.searchProduct(action.text);
-            ListStore.emitChange();
+            //ListStore.emitChange();
             break;
         case 'TO_PRODUCT':
             IdStore.setId(action.text);
