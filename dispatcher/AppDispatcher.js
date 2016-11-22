@@ -10,7 +10,7 @@ AppDispatcher.register(function (action) {
     switch (action.actionType){
         case 'REFRESH_LIST':
             ListStore.getMyProduct();
-            ListStore.emitChange();
+            //ListStore.emitChange();
             break;
         case 'SEARCH':
             ListStore.searchProduct(action.text);

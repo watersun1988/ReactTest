@@ -6,17 +6,6 @@ var assign = require('object-assign');
 
 var ListStore = assign({}, EventEmitter.prototype, {
     items: [
-        {   id:'1',
-            product:'glod',
-            price:'123',
-            increase:'1%'
-        },
-        {
-            id:'2',
-            product:'ch glod',
-            price:'200',
-            increase:'2%'
-        }
     ],
 
     getAll: function () {
@@ -33,7 +22,11 @@ var ListStore = assign({}, EventEmitter.prototype, {
     },
 
     getMyProduct:function () {
-        this.items[0].price+='0';
+        $.get('../main',function (data) {
+            console.log("data:"+data.reason);
+            ListStore.items = data.result.data;
+            ListStore.emitChange();
+        });
     },
 
     searchProduct:function (value) {
