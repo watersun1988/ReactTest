@@ -8,11 +8,15 @@ var ListStore = require('../stores/ListStore');
 var ProductPageCtl = React.createClass({
     getInitialState:function () {
         return {
-            data: ListStore.getId(this.props.id)
+            data: {}
         }
     },
     componentDidMount:function () {
-
+        $.get("../product/"+this.props.id,function (res) {
+            this.setState({
+                data:res.result
+            });
+        }.bind(this));
     },
     render:function () {
         return(
