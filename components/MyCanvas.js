@@ -5,20 +5,26 @@ var React = require('react');
 
 var MyCanvas = React.createClass({
     componentDidMount:function () {
-        var datas = this.props.data;
+
+    },
+    componentWillReceiveProps:function (newProps) {
+        console.log('MyCanvas componentWillReceiveProps:');
+        var datas = newProps.data;
         var canvas = this.refs.mycanvas;
         var context = canvas.getContext('2d');
-        console.log("datas length:"+this.props.data.product);
+        context.strokeRect(0,0,300,300);
+        context.moveTo(10,10);
         for(var i in datas){
-            console.log('time:'+datas[i].time+' price:'+datas[i].price);
+            context.lineTo(datas[i].time,datas[i].price)
         }
-        context.fillRect(0,0,100,100);
-        context.strokeRect(120,0,100,100);
+        context.lineWidth = 2;
+        context.strokeStyle = "#F5270B";
+        context.stroke();
     },
     render:function () {
         return(
             <div>
-                <canvas ref='mycanvas'></canvas>
+                <canvas ref='mycanvas' height='350px'></canvas>
             </div>
         )
     }

@@ -2,8 +2,9 @@
  * Created by SP on 2016/11/20.
  */
 var React = require('react');
-var ProductPage = require('./ProductPage')
+var ProductPage = require('./ProductPage');
 var ListStore = require('../stores/ListStore');
+var MyCanvas = require('./MyCanvas');
 
 var ProductPageCtl = React.createClass({
     getInitialState:function () {
@@ -13,6 +14,7 @@ var ProductPageCtl = React.createClass({
     },
     componentDidMount:function () {
         $.get("../product/"+this.props.id,function (res) {
+            console.log('product success');
             this.setState({
                 data:res.result
             });

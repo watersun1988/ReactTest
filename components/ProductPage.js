@@ -10,7 +10,7 @@ var ProductPage = React.createClass({
         return(
             <div className="panel-body">
                 <ListNode data={this.props.data}></ListNode>
-                <MyCanvas data={this.props.data}/>
+                <MyCanvas data={this.props.data.data}/>
             </div>
         )
     }
